@@ -7,8 +7,16 @@ public class ExamplePlayerMovement : MonoBehaviour {
     public float TurnSpeed = 120.0f;
     public float MoveSpeed = 8.0f;
 
-	// Use this for initialization
-	void Start () {
+    
+    public Transform bulletSpawnPoint;
+    public GameObject bulletPrefab;
+    public float bulletSpeed = 10;
+    public float fireRate;
+    private float lastShotTime = 0;
+
+    //public Rigidbody projectile;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -25,7 +33,25 @@ public class ExamplePlayerMovement : MonoBehaviour {
 
         if (FigmentInput.GetButton(FigmentInput.FigmentButton.ActionButton))
         {
-            transform.Translate(Vector3.forward * MoveSpeed * Time.deltaTime);
+            //transform.Translate(Vector3.forward * MoveSpeed * Time.deltaTime);
+
+            if(Time.time > lastShotTime + fireRate)
+            {
+                Debug.Log("Shoot");
+                lastShotTime = Time.time;
+
+                GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+                bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+            }
+            
+
+            /*
+            Rigidbody clone;
+
+            clone = Instantiate(projectile, transform.position, transform.rotation);
+
+            clone.velocity = transform.TransformDirection(Vector3.forward * 10);
+            */
         }
     }
 }

@@ -6,6 +6,10 @@ public class Gun : MonoBehaviour
     public float range = 100f;
     public Camera fpsCam;
 
+    public Transform bulletSpawnPoint;
+    public GameObject bulletPrefab;
+    public float bulletSpeed = 10;
+
     public enum FigmentButton
     {
         LeftButton,
