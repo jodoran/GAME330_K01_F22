@@ -4,11 +4,6 @@ public class Enemy : MonoBehaviour
 {
     public float health = 50f;
 
-
-    private void OnTriggerEnter(Collider other)
-    {
-        TakeDamage(10);
-    }
     public void TakeDamage(float amount)
     {
         health -= amount;
@@ -18,7 +13,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Die()
+    void Die()
     {
         Destroy(gameObject);
     }
