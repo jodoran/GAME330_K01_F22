@@ -22,14 +22,27 @@ public class ExamplePlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        Quaternion to;
+
         if (FigmentInput.GetButton(FigmentInput.FigmentButton.LeftButton))
         {
-            transform.Rotate(Vector3.up, -TurnSpeed * Time.deltaTime);
+            to = Quaternion.Euler(0, transform.rotation.eulerAngles.y - 1, 0);
+            //transform.Rotate(Vector3.up, -TurnSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, to, TurnSpeed * Time.deltaTime);
         }
         else if (FigmentInput.GetButton(FigmentInput.FigmentButton.RightButton))
         {
-            transform.Rotate(Vector3.up, TurnSpeed * Time.deltaTime);
+            to = Quaternion.Euler(0, transform.rotation.eulerAngles.y + 1, 0);
+            transform.rotation = Quaternion.Slerp(transform.rotation, to, TurnSpeed * Time.deltaTime);
         }
+        else
+        {
+            to = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+            transform.rotation = Quaternion.Slerp(transform.rotation, to, TurnSpeed * Time.deltaTime/2);
+        }
+
+        
 
         if (FigmentInput.GetButton(FigmentInput.FigmentButton.ActionButton))
         {
