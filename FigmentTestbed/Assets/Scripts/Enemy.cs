@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        Debug.Log("Zombie has died");
         Destroy(gameObject);
     }
 }
