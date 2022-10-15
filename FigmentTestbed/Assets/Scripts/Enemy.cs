@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
     public float health = 50f;
-
+    public static bool enemyDied = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +16,11 @@ public class Enemy : MonoBehaviour
         if(health <= 0f)
         {
             Die();
+            enemyDied = true;
+        }
+        else
+        {
+            enemyDied = false;
         }
     }
 
