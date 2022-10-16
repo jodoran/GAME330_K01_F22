@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Platform
+  - Health
+  - Enemy
+  - Stair1
+  - Stair2
+  - Stair3
+  - Stair4
   layers:
   - Default
   - TransparentFX
@@ -38,6 +45,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 1419567243
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
