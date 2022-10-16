@@ -14,14 +14,10 @@ public class ExamplePlayerMovement : MonoBehaviour {
     public float fireRate;
     private float lastShotTime = 0;
 
-    //public Rigidbody projectile;
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    public AudioSource gunSoundEffect;
+
+    // Update is called once per frame
+    void Update () {
 
         Quaternion to;
 
@@ -55,6 +51,8 @@ public class ExamplePlayerMovement : MonoBehaviour {
 
                 GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
                 bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+
+                gunSoundEffect.Play();
             }
             
 

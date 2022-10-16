@@ -7,6 +7,7 @@ public class PlayerScore : MonoBehaviour
 {
     public Text scoreText;
     int score = 0;
+    public AudioSource deathSoundEffect;
 
     void Scorer()
     {
@@ -14,6 +15,7 @@ public class PlayerScore : MonoBehaviour
         {
             score += 1;
             scoreText.text = "Score: " + score.ToString();
+            deathSoundEffect.Play();
             Enemy.enemyDied = false;
         }
     }
