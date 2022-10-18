@@ -12,16 +12,19 @@ public class PlayerDeath : MonoBehaviour
     public AudioSource endgameSound;
     private bool gameOver = false;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if(other.gameObject.tag == "Enemy")
         {
             Debug.Log("DEATH");
+            SceneManager.LoadScene("EndScreen");
+            /*
             gameOver = true;
             gameCanvas.SetActive(false);
             endgameCanvas.SetActive(true);
             backgroundMusic.Stop();
             endgameSound.Play();
+            */
         }
     }
     // Start is called before the first frame update
@@ -33,9 +36,9 @@ public class PlayerDeath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("space") && gameOver == true)
+        /*if(Input.GetButtonDown("space") && gameOver == true)
         {
             SceneManager.LoadScene("FigmentTestScene");
-        }
+        }*/
     }
 }
