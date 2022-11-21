@@ -16,6 +16,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		[SerializeField] float m_AnimSpeedMultiplier = 1f;
 		[SerializeField] float m_GroundCheckDistance = 0.1f;
 
+		[SerializeField] LayerMask _aimLayerMask;
+
 		Rigidbody m_Rigidbody;
 		Animator m_Animator;
 		bool m_IsGrounded;
@@ -42,8 +44,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
 		}
 
+        private void Update()
+        {
+			AimTowardMouse();
+        }
 
-		public void Move(Vector3 move, bool crouch, bool jump)
+
+        public void Move(Vector3 move, bool crouch, bool jump)
 		{
 
 			// convert the world relative moveInput vector into a local-relative
@@ -220,6 +227,19 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_GroundNormal = Vector3.up;
 				m_Animator.applyRootMotion = false;
 			}
+		}
+
+		void AimTowardMouse()
+		{
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+			if(Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, _aimLayerMask))
+            {
+				var direction = hitInfo.point - transform.position;
+				direction.y = 0f;
+				direction.Normalize();
+				transform.forward = direction;
+            }
 		}
 	}
 }
