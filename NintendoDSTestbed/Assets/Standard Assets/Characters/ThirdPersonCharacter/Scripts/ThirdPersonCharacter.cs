@@ -31,6 +31,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
 
+		public Transform bulletSpawnPoint;
+
 
 		void Start()
 		{
