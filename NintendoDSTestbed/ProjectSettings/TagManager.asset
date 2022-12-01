@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Loose
+  - DeathBody
   layers:
   - Default
   - TransparentFX
@@ -13,13 +15,13 @@ TagManager:
   - UI
   - 
   - 
-  - NintendoDSRoot
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - FirstPerson
+  - ThirdPerson
+  - Projectile
+  - NonPlayer
+  - EffectToPlayer
+  - EffectFromPlayer
+  - ThirdPersonBarrier
   - 
   - 
   - 
