@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/NintendoDSTestbed.unity
+    guid: 07b5e427c20c30b4493be962adb5afc4
+  - enabled: 1
+    path: Assets/Scenes/GameOverSceen.unity
+    guid: 8ea832dcc4f96fc4899ae1279d468ae8
   m_configObjects: {}
