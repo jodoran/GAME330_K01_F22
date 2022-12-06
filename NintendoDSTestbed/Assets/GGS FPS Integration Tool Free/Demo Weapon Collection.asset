@@ -13,18 +13,23 @@ MonoBehaviour:
   m_Name: Demo Weapon Collection
   m_EditorClassIdentifier: 
   WeaponDetailsList:
-  - WeaponScriptableObject: {fileID: 11400000, guid: 97703cd31984b4dbc8e235b20bd15e95, type: 2}
+  - WeaponScriptableObject: {fileID: 11400000, guid: 97703cd31984b4dbc8e235b20bd15e95,
+      type: 2}
     IsEnabledOnStart: 1
     IsLoadedOnStart: 1
-  - WeaponScriptableObject: {fileID: 11400000, guid: b651223432f0a4bf599c8b5dfb16bd38, type: 2}
+  - WeaponScriptableObject: {fileID: 11400000, guid: b651223432f0a4bf599c8b5dfb16bd38,
+      type: 2}
     IsEnabledOnStart: 0
     IsLoadedOnStart: 1
-  - WeaponScriptableObject: {fileID: 11400000, guid: b7feb1150dd614af3b46073ac501b94e, type: 2}
+  - WeaponScriptableObject: {fileID: 11400000, guid: b7feb1150dd614af3b46073ac501b94e,
+      type: 2}
     IsEnabledOnStart: 0
     IsLoadedOnStart: 1
-  - WeaponScriptableObject: {fileID: 11400000, guid: 845d05b3ac4114d69b41fa9dc7d8a8e7, type: 2}
+  - WeaponScriptableObject: {fileID: 11400000, guid: 845d05b3ac4114d69b41fa9dc7d8a8e7,
+      type: 2}
     IsEnabledOnStart: 0
     IsLoadedOnStart: 1
-  - WeaponScriptableObject: {fileID: 11400000, guid: b44cd2e1310f34fbc9b189a64ebecc22, type: 2}
+  - WeaponScriptableObject: {fileID: 11400000, guid: b44cd2e1310f34fbc9b189a64ebecc22,
+      type: 2}
     IsEnabledOnStart: 0
     IsLoadedOnStart: 1

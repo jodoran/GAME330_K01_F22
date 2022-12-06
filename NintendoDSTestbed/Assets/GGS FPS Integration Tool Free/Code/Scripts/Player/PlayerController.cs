@@ -20,8 +20,8 @@ namespace GGSFPSIntegrationTool.Scripts.Player
         [SerializeField] string _MouseYAxisName;
 
         [Header("Movement Speeds")]
-        [SerializeField] float _WalkingSpeed = 5f;
-        [SerializeField] float _RunningSpeed = 10f;
+        public float _WalkingSpeed = 5f;
+        public float _RunningSpeed = 10f; 
 
         [Header("Mouse Sensitivities")]
         [SerializeField] float _MouseXSensitivity = 1f;
@@ -47,7 +47,7 @@ namespace GGSFPSIntegrationTool.Scripts.Player
         [Header("Layers")]
         [SerializeField] LayerMask _NonJumpSurfaceLayers;
 
-        Utilities.PlayerController.Manager PlayerControllerManager { get; set; }
+        public Utilities.PlayerController.Manager PlayerControllerManager { get; set; }
 
         void Awake()
         {
