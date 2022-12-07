@@ -15,7 +15,7 @@ namespace GGSFPSIntegrationTool.Scripts.Player
 
         [Space]
         
-        [SerializeField] Text _HealthText;           
+        public Text _HealthText;           
         [SerializeField] Image _LowHealthOverlay;
         [SerializeField] Image _DamageOverlay;
         [SerializeField] [Range(0f, 1f)] float _MaxDamageOverlayOpacity = 0.3f;

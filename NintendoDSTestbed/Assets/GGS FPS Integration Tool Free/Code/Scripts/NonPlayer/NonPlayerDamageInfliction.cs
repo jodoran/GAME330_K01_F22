@@ -17,7 +17,7 @@ namespace GGSFPSIntegrationTool.Scripts.NonPlayer
 
         [Space]
 
-        [SerializeField] float _DamageHealthLoss = 10f;
+        public float _DamageHealthLoss = 10f;
         [SerializeField] GameObject _BloodSplatter;
         
         public float BloodSplatterLifeTime { get; set; } = 1f;
